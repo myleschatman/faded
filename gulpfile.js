@@ -8,6 +8,7 @@ const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const buffer = require('gulp-buffer');
 const source = require('vinyl-source-stream');
+const babelify = require('babelify');
 const browserify = require('browserify');
 const browserSync = require('browser-sync').create();
 
@@ -52,6 +53,9 @@ gulp.task('build', ['phaser'], function() {
     paths: [path.join(__dirname, './src')],
     entries: './client/src/index.js',
     debug: true
+  })
+  .transform(babelify, {
+      presets: ['es2015']
   })
   .bundle()
   .pipe(source('bundle.js'))
