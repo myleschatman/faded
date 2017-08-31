@@ -5,8 +5,9 @@ export default class Player extends Phaser.Sprite {
         this.game.physics.arcade.enable(this);
         this.game.physics.arcade.enableBody(this);
 
-        this.animations.add('walk-left', [0], 9, true);
-        this.animations.add('walk-right', [0], 9, true);
+        // this.animations.add('walk-left', [170], 9, true);
+        this.animations.add('walk-left', [216, 217, 218, 219, 220, 221, 222, 223, 224], 9, true);
+        this.animations.add('walk-right', [264, 265, 266, 267, 268, 269, 270, 271, 272], 9, true);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
     }
@@ -17,22 +18,13 @@ export default class Player extends Phaser.Sprite {
 
         // player moves in specified direction or stands still
         if (this.cursors.left.isDown) {
-            this.animations.play("walk-left");
+            this.animations.play('walk-left');
             this.body.velocity.x =- 180;
         } else if (this.cursors.right.isDown) {
-            this.animations.play("walk-right");
+            this.animations.play('walk-right');
             this.body.velocity.x =+ 180;
         } else {
             this.body.velocity.x = 0;
-        }
-        if (this.cursors.up.isDown) {
-            this.animations.play("walk-up");
-            this.body.velocity.y =- 180;
-        } else if (this.cursors.down.isDown) {
-            this.animations.play("walk-down");
-            this.body.velocity.y =+ 180;
-        } else {
-            this.body.velocity.y = 0;
         }
         if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
             this.animations.stop();

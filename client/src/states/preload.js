@@ -1,6 +1,6 @@
 export default class Preload {
     preload() {
-        this.load.spritesheet('knight', 'assets/knight.png', 64, 64, 196);
+        this.load.spritesheet('knight', 'assets/knight.png', 64, 64, 760);
     }
 
     create() {
