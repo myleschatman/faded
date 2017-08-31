@@ -1,12 +1,8 @@
-export default class Game extends Phaser.State{
+export default class Boot {
     preload() {
-        game.load.image('knight', '../assets/knight.png');
+
     }
     create() {
-        var knight;
-        knight = game.add.sprite(400, 300, 'knight');
-    }
-    update() {
-
+        this.game.state.start('preload');
     }
 }
