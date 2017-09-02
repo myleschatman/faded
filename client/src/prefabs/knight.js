@@ -5,7 +5,6 @@ export default class Player extends Phaser.Sprite {
         this.game.physics.arcade.enable(this);
         this.game.physics.arcade.enableBody(this);
 
-        // this.animations.add('walk-left', [170], 9, true);
         this.animations.add('walk-left', [216, 217, 218, 219, 220, 221, 222, 223, 224], 9, true);
         this.animations.add('walk-right', [264, 265, 266, 267, 268, 269, 270, 271, 272], 9, true);
 
