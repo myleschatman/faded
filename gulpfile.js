@@ -31,7 +31,7 @@ gulp.task('static', ['clean'], function() {
 
 // Copies Phaser library to ./build directory
 gulp.task('phaser', ['static'], function() {
-    return gulp.src('./node_modules/phaser/build/phaser.min.js')
+    return gulp.src('./node_modules/phaser/build/phaser.js')
         .pipe(gulp.dest('./build/scripts'));
 });
 
